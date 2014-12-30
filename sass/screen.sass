@@ -1,0 +1,60 @@
+// FILE: sass/screen.scss
+/* Main Styles */
+
+@import compass
+@import compass/css3
+@import compass/layout
+
+$bg_color: #f5f5f5
+$text_color: darken($bg_color, 80%)
+$muted_color: darken($bg_color, 65%)
+$footer_color: darken($bg_color, 10%)
+$footer_color2: complement($footer_color)
+
+$base_font-size: 16px
+$base-line-height: 30px
++establish-baseline
+
+
+body
+  +adjust-font-size-to(10px)
+  color: $text_color
+  background-color: $bg_color
+  text-align: center
+  .container
+    padding: 60px 15px 0
+    position: relative
+    .text-muted
+      margin: 20px 0
+
+h1
+  +text-shadow(darken(#5d1b31, 20%) 1px 2px)
+
+footer
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 60px
+  +background(linear-gradient(top, $footer_color, $footer_color2))
+
+.welcome
+  font-family: 'Lato', sans-serif
+  width: 600px
+  position: absolute
+  +stretch(50%, 0, 0, 50%)
+  margin-left: -300px
+  margin-top: 50px
+  img
+    margin: 0 auto
+  .btn-primary
+    margin-bottom: 0.4em
+
+.text-muted
+  color: $muted_color
+
+.fb-like
+  margin: 1em
+
+/* disable submit btn */
+.fake_disable
+  +opacity(0.7)
